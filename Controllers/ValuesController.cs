@@ -9,6 +9,9 @@ namespace test.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+
+        public int value = 0;
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
@@ -20,7 +23,7 @@ namespace test.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return (id + 1).ToString();
+            return (value += id).ToString();
         }
 
         // POST api/values
